@@ -6,7 +6,7 @@ import IconInstagram from '@/assets/img/instagram'
 import IconLinkedin from '@/assets/img/linkedin'
 
 
-export function Home (){
+export function LinkHub (){
 
     return(<>
     <main className="container p-6 max-w-4xl flex flex-col items-center">

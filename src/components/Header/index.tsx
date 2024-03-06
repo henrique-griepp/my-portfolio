@@ -1,12 +1,35 @@
-import { ModeToggle } from "../mode-toggle.tsx" 
+import { useState } from "react";
+import { Switch } from "../ui/switch";
 
+import data from "@/assets/dataLang.json";
 
-export function Header () {
-    return(
-        <nav className="p-2 container max-w-4xl absolute right-0 left-0 flex justify-end ">
-            <ModeToggle />
-        </nav> 
-    )
-        
-    
+export function Header() {
+  const [lang, setLang] = useState("pt-br");
+
+  const handleLang = () => {
+    const newLang = lang === "pt-br" ? "en" : "pt-br";
+    setLang(newLang);
+    document.documentElement.lang = newLang;
+  };
+
+  const language = data[lang].navBar;
+
+  console.log(language);
+
+  return (
+    <>
+      <header className="bg-red-500">
+        <span>MYAPP</span>
+        <ul>
+          {language.map((item: string) => (
+            <li>
+              <button>{item}</button>
+            </li>
+          ))}
+        </ul>
+
+        <Switch onClick={handleLang} />
+      </header>
+    </>
+  );
 }

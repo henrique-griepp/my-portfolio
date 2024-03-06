@@ -1,12 +1,11 @@
-import { ThemeProvider } from "./components/theme-provider"
+import { ThemeProvider } from "./components/Theme/theme-provider"
 import  "../app/globals.css"
-import { Home } from "./pages/Home"
-import { Header } from "./components/Header"
+import { RouterProvider } from "react-router-dom"
+import router from "./router"
 function App() {
   return (
     <ThemeProvider defaultTheme="dark" storageKey="vite-ui-theme">
-      <Header />
-      <Home />
+      <RouterProvider router={router}/>
     </ThemeProvider>
   )
 }

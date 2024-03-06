@@ -1,0 +1,11 @@
+{
+    "name": "Henrique",
+    "lastName": "Griepp Cerqueira",
+    "email": "contato@grceh.com",
+    "pt-br": {
+        "navBar":  ["Inicio", "Sobre Mim", "Serviços", "Habilidades", "Projetos", "Contato"]
+    },
+    "en": {
+        "navBar":["Home", "About", "Services", "Skills", "Projects", "Contact"]
+    }
+}
