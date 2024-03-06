@@ -1,11 +1,61 @@
 {
-    "name": "Henrique",
-    "lastName": "Griepp Cerqueira",
-    "email": "contato@grceh.com",
-    "pt-br": {
-        "navBar":  ["Inicio", "Sobre Mim", "Serviços", "Habilidades", "Projetos", "Contato"]
-    },
-    "en": {
-        "navBar":["Home", "About", "Services", "Skills", "Projects", "Contact"]
-    }
+  "name": "Henrique",
+  "lastName": "Griepp Cerqueira",
+  "email": "contato@grceh.com",
+  "pt-br": {
+    "navBar": [
+      {
+        "menu": "Inicio",
+        "url": "/"
+      },
+      {
+        "menu": "Sobre Mim",
+        "url": "/"
+      },
+      {
+        "menu": "Serviços",
+        "url": "/"
+      },
+      {
+        "menu": "Habilidades",
+        "url": "/"
+      },
+      {
+        "menu": "Projetos",
+        "url": "/"
+      },
+      {
+        "menu": "Contato",
+        "url": "/"
+      }
+    ]
+  },
+  "en": {
+    "navBar": [
+        {
+          "menu": "Home",
+          "url": "/"
+        },
+        {
+          "menu": "About",
+          "url": "/"
+        },
+        {
+          "menu": "Services",
+          "url": "/"
+        },
+        {
+          "menu": "Skills",
+          "url": "/"
+        },
+        {
+          "menu": "Projects",
+          "url": "/"
+        },
+        {
+          "menu": "Contact",
+          "url": "/"
+        }
+      ]
+  }
 }

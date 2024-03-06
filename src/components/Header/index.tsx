@@ -1,7 +1,8 @@
-import { useState } from "react";
+import {useState } from "react";
 import { Switch } from "../ui/switch";
 
 import data from "@/assets/dataLang.json";
+import { Link } from "react-router-dom";
 
 export function Header() {
   const [lang, setLang] = useState("pt-br");
@@ -14,21 +15,23 @@ export function Header() {
 
   const language = data[lang].navBar;
 
-  console.log(language);
+  console.log(language.map((item: { url: string; }) => item.url))
 
   return (
     <>
-      <header className="bg-red-500">
-        <span>MYAPP</span>
-        <ul>
-          {language.map((item: string) => (
+      <header className="w-full fixed "  >
+        <div className="container flex justify-between items-center py-1">
+        <span className="text-3xl">MYAPP</span>
+        <ul className="flex w-full  justify-end text-2xl gap-5 px-3">
+          {language.map((item: { url: string; menu: string }) => (
             <li>
-              <button>{item}</button>
+              <Link to={item.url}>{item.menu}</Link>
             </li>
           ))}
         </ul>
 
         <Switch onClick={handleLang} />
+        </div>
       </header>
     </>
   );
