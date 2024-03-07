@@ -1,4 +1,24 @@
-{
+
+interface NavBarMenuItem {
+  menu: string;
+  url: string;
+}
+
+export interface NavBarLanguage {
+  navBar: NavBarMenuItem[];
+}
+
+interface DataLang {
+  name: string;
+  lastName: string;
+  email: string;
+  'pt-br': NavBarLanguage 
+  'en': NavBarLanguage 
+  [key: string]: NavBarLanguage | string;
+}
+
+
+const dataLang: DataLang = {
   "name": "Henrique",
   "lastName": "Griepp Cerqueira",
   "email": "contato@grceh.com",
@@ -9,7 +29,7 @@
         "url": "/"
       },
       {
-        "menu": "Sobre Mim",
+        "menu": "Sobre",
         "url": "/"
       },
       {
@@ -59,3 +79,5 @@
       ]
   }
 }
+
+export default dataLang

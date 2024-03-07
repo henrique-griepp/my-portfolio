@@ -1,7 +1,8 @@
-import {useState } from "react";
+import { useState } from "react";
 import { Switch } from "../ui/switch";
 
-import data from "@/assets/dataLang.json";
+import dataLang from "../../assets/dataLang.ts";
+import { NavBarLanguage } from "../../assets/dataLang.ts";
 import { Link } from "react-router-dom";
 
 export function Header() {
@@ -13,24 +14,21 @@ export function Header() {
     document.documentElement.lang = newLang;
   };
 
-  const language = data[lang].navBar;
-
-  console.log(language.map((item: { url: string; }) => item.url))
+  const { navBar } = (dataLang[lang] as NavBarLanguage) || { navBar: [] };
 
   return (
     <>
-      <header className="w-full fixed "  >
-        <div className="container flex justify-between items-center py-1">
-        <span className="text-3xl">MYAPP</span>
-        <ul className="flex w-full  justify-end text-2xl gap-5 px-3">
-          {language.map((item: { url: string; menu: string }) => (
-            <li>
-              <Link to={item.url}>{item.menu}</Link>
-            </li>
-          ))}
-        </ul>
-
-        <Switch onClick={handleLang} />
+      <header className="w-full fixed ">
+        <div className="container flex justify-between items-center py-1 my-5">
+          <span className="text-3xl items-center">MYAPP</span>
+          <ul className="flex w-full justify-between max-w-3xl text-2xl  px-4 ">
+            {navBar.map((item: { url: string; menu: string }) => (
+              <li className="p-2" key={item.menu}>
+                <Link to={item.url}>{item.menu}</Link>
+              </li>
+            ))}
+          </ul>
+          <Switch className="flex items-center" onClick={handleLang} />
         </div>
       </header>
     </>
