@@ -1,4 +1,8 @@
+
+
 function ComposedPage() {
+ 
+
   return (
     <>
       <section id="home" className="h-screen bg-gradient-to-t from-foreground to-background ..."></section>
