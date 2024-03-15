@@ -12,7 +12,7 @@ interface DataLang {
   name: string;
   lastName: string;
   email: string;
-  'pt-br': NavBarLanguage 
+  'pt-BR': NavBarLanguage 
   'en': NavBarLanguage 
   [key: string]: NavBarLanguage | string;
 }
@@ -22,7 +22,7 @@ const dataLang: DataLang = {
   "name": "Henrique",
   "lastName": "Griepp Cerqueira",
   "email": "contato@grceh.com",
-  "pt-br": {
+  "pt-BR": {
     "navBar": [
       {
         "menu": "Inicio",
