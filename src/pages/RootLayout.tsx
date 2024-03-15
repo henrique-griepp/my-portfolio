@@ -10,7 +10,6 @@ export function RootLayout() {
   return (
     <>
     <Header />
-    <button className="h-100% flex justify-center" >hfgj</button>
       <main>
         <Outlet />
       </main>
