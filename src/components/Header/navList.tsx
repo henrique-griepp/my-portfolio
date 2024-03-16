@@ -4,9 +4,10 @@ import { Link } from "react-router-dom";
 import { ModeToggle } from "../Theme/mode-toggle";
 
 export function NavList(props: { className: string }) {
-  const savedLang: string = localStorage.getItem("preferredLang");
+  const savedLang: string | null= localStorage.getItem("preferredLang");
 
-  const { navBar } = (dataLang[savedLang] as NavBarLanguage) || { navBar: [] };
+  const navBarData = savedLang ? (dataLang[savedLang] as NavBarLanguage) : null;
+  const navBar = navBarData ? navBarData.navBar : [];
 
   return (
     <>
