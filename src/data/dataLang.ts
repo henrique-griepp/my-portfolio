@@ -4,8 +4,10 @@ interface NavBarMenuItem {
   url: string;
 }
 
+
 export interface NavBarLanguage {
   navBar: NavBarMenuItem[];
+  home: string[];
 }
 
 interface DataLang {
@@ -48,7 +50,8 @@ const dataLang: DataLang = {
         "menu": "Contato",
         "url": "/"
       }
-    ]
+    ],
+    "home": ["Olá Mundo, me chamo", "E eu sou", "Desenvolvedor Web" ]
   },
   "en": {
     "navBar": [
@@ -76,7 +79,8 @@ const dataLang: DataLang = {
           "menu": "Contact",
           "url": "/"
         }
-      ]
+      ],
+      "home": ["Hello World, my name is", "I am a", "Web Developer"]
   }
 }
 

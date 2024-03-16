@@ -8,6 +8,7 @@ import IconMenu from "@/assets/img/menu.tsx";
 export function Header() {
   const [scroll, setScroll] = useState(false);
   const [openNavBar, setOpenNavBar] = useState(false);
+  
 
   const handleScroll = () => {
     const scroll = window.scrollY >= 20 ? true : false;
@@ -18,11 +19,6 @@ export function Header() {
 
   useEffect(() => {
     window.addEventListener("scroll", handleScroll);
-    //-----procurar mais detalhes---------
-
-    // return () => {
-    //   window.removeEventListener("scroll", handleScroll)
-    // };
   });
 
   return (

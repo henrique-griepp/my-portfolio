@@ -6,9 +6,9 @@ import { ModeToggle } from "../Theme/mode-toggle";
 export function NavList(props: { className: string }) {
   const savedLang: string | null= localStorage.getItem("preferredLang");
 
-  const langKey: string = savedLang || "en"; // 
+  const langKey: string = savedLang || "en"; 
 
-  const { navBar } = (dataLang[langKey] as NavBarLanguage) || { navBar: [] };
+  const { navBar } = (dataLang[langKey] as NavBarLanguage);
 
   return (
     <>

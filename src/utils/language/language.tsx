@@ -31,6 +31,7 @@ export default function ChangeLanguage  ()  {
     setLang(newLang);
     document.documentElement.lang = newLang;
     localStorage.setItem('preferredLang', newLang);
+    
   };
   
   return handleLang
