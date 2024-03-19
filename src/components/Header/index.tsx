@@ -1,14 +1,14 @@
 import { useEffect, useState } from "react";
 import { Switch as SwitchLang } from "../ui/switch";
 import { NavList } from "./navList.tsx";
-import ChangeLanguage from "@/utils/language/language.tsx";
 import IconClose from "@/assets/img/close.tsx";
 import IconMenu from "@/assets/img/menu.tsx";
+import useLanguage from "@/utils/language/useLanguage.ts";
 
 export function Header() {
   const [scroll, setScroll] = useState(false);
   const [openNavBar, setOpenNavBar] = useState(false);
-  
+  const [language, setLanguage] = useLanguage();
 
   const handleScroll = () => {
     const scroll = window.scrollY >= 20 ? true : false;
@@ -19,12 +19,17 @@ export function Header() {
 
   useEffect(() => {
     window.addEventListener("scroll", handleScroll);
+
+    // return () => {
+    //   window.removeEventListener("scroll", handleScroll)
+    // }
+    
   });
 
   return (
     <>
       <header
-        className={`fixed z-[0] w-full flex justify-center items-center transition ${
+        className={`fixed z-[1] w-full flex justify-center items-center transition ${
           scroll === true
             ? `ease-linear duration-75 bg-background`
             : `duration-1000 ease-out`
@@ -34,13 +39,15 @@ export function Header() {
           id="nav-web"
           className={`hidden container md:flex flex-row justify-between items-center px-2`}
         >
-          <span className="text-3xl">MYAPP</span>
+          <span className="lg:w-[100px] text-3xl">MYAPP</span>
           <NavList className={``} />
-          <SwitchLang
-            className="hidden md:block"
-            checked={localStorage.getItem("preferredLang") === "en"}
-            onClick={ChangeLanguage()}
-          />
+          <button className=" lg:w-[100px]  flex justify-end">
+            <SwitchLang
+              className=" hidden md:block "
+              checked={language === "en"}
+              onClick={() => setLanguage(language === "en" ? "pt-BR" : "en")}
+            />
+          </button>
         </nav>
         <nav id="nav-mob" className={`md:hidden w-full h-full flex flex-col`}>
           <div
@@ -51,12 +58,15 @@ export function Header() {
             } `}
           >
             <SwitchLang
-              checked={localStorage.getItem("preferredLang") === "en"}
-              onClick={ChangeLanguage()}
+              checked={language === "en"}
+              onClick={() => setLanguage(language === "en" ? "pt-BR" : "en")}
             />
 
             <span className="text-3xl">MYAPP</span>
-            <button className="size-9 " onClick={handleToggleNavBar}>
+            <button
+              className="size-9 hover:text-primary"
+              onClick={handleToggleNavBar}
+            >
               {openNavBar ? <IconClose /> : <IconMenu />}
             </button>
           </div>

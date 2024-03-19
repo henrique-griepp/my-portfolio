@@ -17,6 +17,7 @@ body {
   height: 100%;
   margin: auto;
   min-width: 320px;
+ /* color: hsl(224, 77%, 14%) ; */
 }
 
 @layer base {
@@ -28,7 +29,7 @@ body {
     --card-foreground: 0 0% 100%;
     --popover: 224, 42%, 43%;
     --popover-foreground: 0 0% 100%;
-    --primary: 210 40% 98%;
+    --primary: 224, 77%, 14%;
     --primary-foreground: 222.2 47.4% 11.2%;
     --secondary: 222.2 47.4% 11.2%;
     --secondary-foreground: 210 40% 96.1%;
