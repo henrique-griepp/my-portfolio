@@ -15,7 +15,7 @@ export function NavList(props: { className: string }) {
         className={`w-full md:h-auto md:max-w-[700px] flex  flex-col md:flex-row md: md:justify-between items-center  gap-x-1 text-2xl ${props.className}`}
       >
         {navBar.map((item: { url: string; menu: string }) => (
-          <li className="p-2 md:px-1 hover:text-primary" key={item.menu}>
+          <li className="p-2 md:px-1 hover:text-accent" key={item.menu}>
             <Link to={item.url}>{item.menu}</Link>
           </li>
         ))}

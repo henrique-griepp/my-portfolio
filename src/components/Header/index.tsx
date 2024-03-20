@@ -41,13 +41,13 @@ export function Header() {
         >
           <span className="lg:w-[100px] text-3xl">MYAPP</span>
           <NavList className={``} />
-          <button className=" lg:w-[100px]  flex justify-end">
+          <div className=" lg:w-[100px]  flex justify-end">
             <SwitchLang
               className=" hidden md:block "
               checked={language === "en"}
               onClick={() => setLanguage(language === "en" ? "pt-BR" : "en")}
             />
-          </button>
+          </div>
         </nav>
         <nav id="nav-mob" className={`md:hidden w-full h-full flex flex-col`}>
           <div
@@ -63,12 +63,12 @@ export function Header() {
             />
 
             <span className="text-3xl">MYAPP</span>
-            <button
-              className="size-9 hover:text-primary"
+            <div
+              className="size-9 hover:text-accent"
               onClick={handleToggleNavBar}
             >
               {openNavBar ? <IconClose /> : <IconMenu />}
-            </button>
+            </div>
           </div>
           <NavList
             className={` absolute z-[0] py-14 h-screen bg-background flex-col justify-start transition-all  duration-500 ${
