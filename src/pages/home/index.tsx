@@ -12,7 +12,7 @@ export const Home  = (home: HomeType)  => {
             id="home"
             className=" w-full max-w-[1200px] flex  justify-around font-semibold "
           >
-            <div className="my-auto md:w-1/2 h-full flex flex-col text-center md:text-left leading-loose gap-y-4 m-8  md:p-5 ">
+            <div className="my-auto md:w-1/2 h-full flex flex-col text-center md:text-left leading-loose gap-y-4 md:p-5 scale-90 sm:scale-100">
               <div className="text-3xl ">{home.home[0]}</div>
               <div className={`text-5xl `}>Henrique</div>
               <div className="text-4xl md:flex flex-wrap">
