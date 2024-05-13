@@ -5,8 +5,8 @@ type HomeType = {
 export const Home  = (home: HomeType)  => {
     return(
         <div
-          id="home-container"
-          className="h-screen min-h-[400px] flex justify-center items-center bg-gradient-to-t from-blue-200 to-background to-95% "
+          id="home"
+          className="w-full h-screen min-h-[400px] flex justify-center items-center bg-gradient-to-b from-background  to-white border-none"
         >
           <section
             id="home"

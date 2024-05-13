@@ -3,6 +3,7 @@ import useLanguage from "@/utils/language/useLanguage";
 import { Home } from "../home";
 import { About } from "../About";
 
+
 function ComposedPage() {
   const [language] = useLanguage();
 
@@ -10,9 +11,12 @@ function ComposedPage() {
 
   return (
     <>
-      <main className="">
+      <main >
+        <div>
         <Home home={content.home} />
         <About content={content}/>
+
+        </div>
       </main>
     </>
   );

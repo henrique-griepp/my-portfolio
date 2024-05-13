@@ -28,27 +28,27 @@ const dataLang: DataLang = {
     "navBar": [
       {
         "menu": "Inicio",
-        "url": "/"
+        "url": ""
       },
       {
         "menu": "Sobre",
-        "url": "/"
+        "url": "about"
       },
       {
         "menu": "Serviços",
-        "url": "/"
+        "url": "services"
       },
       {
         "menu": "Habilidades",
-        "url": "/"
+        "url": "skills"
       },
       {
         "menu": "Projetos",
-        "url": "/"
+        "url": "project"
       },
       {
         "menu": "Contato",
-        "url": "/"
+        "url": "contact"
       }
     ],
     "home": ["Olá Mundo, me chamo", "E eu sou", "Desenvolvedor Web" ],
@@ -70,27 +70,27 @@ const dataLang: DataLang = {
     "navBar": [
         {
           "menu": "Home",
-          "url": "/"
+          "url": ""
         },
         {
           "menu": "About",
-          "url": "/"
+          "url": "about"
         },
         {
           "menu": "Services",
-          "url": "/"
+          "url": "services"
         },
         {
           "menu": "Skills",
-          "url": "/"
+          "url": "skills"
         },
         {
           "menu": "Projects",
-          "url": "/"
+          "url": "projects"
         },
         {
           "menu": "Contact",
-          "url": "/"
+          "url": "constact"
         }
       ],
       "home": ["Hello World, it's me", " and I'm a", "Web Developer"],

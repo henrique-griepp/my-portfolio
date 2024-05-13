@@ -1,4 +1,4 @@
-import { ThemeProvider } from "./components/Theme/theme-provider";
+import { ThemeProvider } from "./components/Shadcn/theme-provider";
 import "../app/globals.css";
 import { RouterProvider } from "react-router-dom";
 import router from "./router";

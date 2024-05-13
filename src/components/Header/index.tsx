@@ -15,7 +15,7 @@ export function Header() {
     setScroll(scroll);
   };
 
-  const handleToggleNavBar = () => setOpenNavBar((prevState) => !prevState);
+  const handleToggleNavBar = () => {setOpenNavBar((prevState) => !prevState);}
 
   useEffect(() => {
     window.addEventListener("scroll", handleScroll);
@@ -40,7 +40,7 @@ export function Header() {
           className={`hidden container md:flex flex-row justify-between items-center px-2`}
         >
           <span className="lg:w-[100px] text-3xl">MYAPP</span>
-          <NavList className={``} />
+          <NavList className={``} handleToggleNavbar={handleToggleNavBar}  />
           <div className=" lg:w-[100px]  flex justify-end">
             <SwitchLang
               className=" hidden md:block "
@@ -70,7 +70,7 @@ export function Header() {
               {openNavBar ? <IconClose /> : <IconMenu />}
             </div>
           </div>
-          <NavList
+          <NavList handleToggleNavbar={handleToggleNavBar}
             className={` absolute z-[0] py-14 h-screen bg-background flex-col justify-start transition-all  duration-500 ${
               openNavBar
                 ? "translate-y-0 delay-150 opacity-100"

@@ -1,14 +1,26 @@
 import dataLang, { NavBarLanguage } from "@/data/dataLang";
 
-import { Link } from "react-router-dom";
-import { ModeToggle } from "../Theme/mode-toggle";
+import { ModeToggle } from "../Shadcn/mode-toggle";
 import useLanguage from "@/utils/language/useLanguage";
 
-export function NavList(props: { className: string }) {
-  const [language] = useLanguage()
+export function NavList(props: {
+  className: string;
+  handleToggleNavbar: () => void;
+}) {
+  const [language] = useLanguage();
+  const { navBar } = dataLang[language] as NavBarLanguage;
 
-  const { navBar } = (dataLang[language] as NavBarLanguage);
-  
+  const scrollToSection = (id: string) => {
+    const section = document.getElementById(id);
+    if (section) {
+      window.scrollTo({
+        behavior: "smooth",
+        top: section.offsetTop,
+      });
+    }
+  };
+
+
   return (
     <>
       <ul
@@ -16,7 +28,9 @@ export function NavList(props: { className: string }) {
       >
         {navBar.map((item: { url: string; menu: string }) => (
           <li className="p-2 md:px-1 hover:text-accent" key={item.menu}>
-            <Link to={item.url}>{item.menu}</Link>
+            <div onClick={() => {props.handleToggleNavbar(); scrollToSection(item.url);}}>            
+              <a href={`#${item.url}`}>{item.menu}</a>
+            </div>
           </li>
         ))}
         <li className="md:hidden flex p-2">
