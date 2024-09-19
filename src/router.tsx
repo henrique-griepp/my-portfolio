@@ -13,7 +13,7 @@ const router = createBrowserRouter([
         }]
     },
     {
-        path: "links",
+        path: "/links",
         element: <LinkHub />
     }
 ])
